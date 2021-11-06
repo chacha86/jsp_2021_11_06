@@ -29,5 +29,7 @@
 		작성일 : ${article.regDate }
 	<div>
 	<hr>
+    <a href="article?action=showUpdateForm&id=${article.id}">수정</a>
+    <a href="article?action=doDelete&id=${ article.id }">삭제</a>
 </body>
 </html>

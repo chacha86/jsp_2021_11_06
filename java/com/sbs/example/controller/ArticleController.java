@@ -118,7 +118,37 @@ public class ArticleController extends HttpServlet {
 				rd.forward(request, response);
 			}
 			
+		} else if(action.equals("doDelete")) {
+			
+			int id = Integer.parseInt(request.getParameter("id"));
+			dao.deleteArticle(id);
+			
+			response.sendRedirect("article?action=list");
+		}
+		else if(action.equals("showUpdateForm")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			Article article = dao.getArticleById(id);
+			
+			request.setAttribute("article", article);
+			forward(request, response, "updateForm");
+		}
+		else if(action.equals("doUpdate")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			String title = request.getParameter("title");
+			String body = request.getParameter("body");
+			
+			Article article = new Article(id, title, body);
+			dao.updateArticle(article);
+			
+			response.sendRedirect("article?action=detail&id=" + id);
+			
 		}
 		
+	}
+	
+	private void forward(HttpServletRequest request, HttpServletResponse response, String fname) throws ServletException, IOException {
+		String path = "/jsp/" + fname + ".jsp";
+		RequestDispatcher rd =  request.getRequestDispatcher(path);
+		rd.forward(request, response);
 	}
 }
