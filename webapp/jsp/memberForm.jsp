@@ -10,6 +10,7 @@
 
 
 <h1>회원가입 페이지</h1>
+<%@ include file="particle/head.jspf" %>
 <form action="/article">
 	<div>
 		아이디 : <input type="text" name="loginId" />
@@ -23,6 +24,6 @@
 	<input type="hidden" name="action" value="doJoin">
 	<input type="submit" value="가입하기" />
 </form>
-
+<%@ include file="particle/foot.jspf" %>
 </body>
 </html>

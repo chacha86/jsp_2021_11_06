@@ -10,8 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<h1>게시물 상세 페이지</h1>
+    <%@ include file="particle/head.jspf" %>
 	<hr>
 	<div>
 		번호 : ${ article.id } 
@@ -31,5 +31,6 @@
 	<hr>
     <a href="article?action=showUpdateForm&id=${article.id}">수정</a>
     <a href="article?action=doDelete&id=${ article.id }">삭제</a>
+    <%@ include file="particle/foot.jspf" %>
 </body>
 </html>

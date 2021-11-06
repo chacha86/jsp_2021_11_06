@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>게시물 수정</h1>
-
+<%@ include file="particle/head.jspf" %>
 <form action="article">
 	<div>
 		<span>제목</span> 
@@ -22,6 +22,6 @@
 	<input type="hidden" name="action" value="doUpdate"/>
 	<input type="hidden" name="id" value="${ article.id }"/>
 </form>
-
+<%@ include file="particle/foot.jspf" %>
 </body>
 </html>

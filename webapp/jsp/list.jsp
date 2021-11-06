@@ -25,20 +25,7 @@
 </style>
 <body>
 	<h1>게시물 목록 페이지</h1>
-	<hr>
-		<c:choose>
-			<c:when test="${ sessionScope.loginedMember == null }">
-				<div>
-					<a href="/article?action=memberForm">회원가입</a> <a href="/article?action=loginForm">로그인</a>
-				</div>
-			</c:when>
-			<c:otherwise>
-				<div>
-					${ sessionScope.loginedMember.nickname }님 반갑습니다! 
-				</div>			
-			</c:otherwise>
-		</c:choose>
-	<hr>
+	<%@ include file="particle/head.jspf" %>
 	<div>
 		<div class="col">번호</div>
 		<div class="col title">제목</div>
@@ -60,5 +47,6 @@
 		<hr>
 	</div>
 	<a href="article?action=articleForm">글쓰기</a>
+    <%@ include file="particle/foot.jspf" %>
 </body>
 </html>

@@ -10,6 +10,7 @@
 
 
 <h1>게시물 등록 페이지</h1>
+<%@ include file="particle/head.jspf" %>
 <form action="/article?action=doAdd">
 	<div>
 		제목 : <input type="text" name="title" />
@@ -20,6 +21,6 @@
 	<input type="hidden" name="action" value="doAdd">
 	<input type="submit" value="등록" />
 </form>
-
+<%@ include file="particle/foot.jspf" %>
 </body>
 </html>
